@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Slider and gallery styles for homepage */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.city-card {
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.slider {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+}
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.slide.previous {
+    transform: translateX(-100%);
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.slide p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.9em;
+}
+.city-card h3 {
+    margin: 10px;
+    color: #0066cc;
+}
+.city-card > p {
+    margin: 0 10px 10px;
+}
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    font-size: 18px;
+    border-radius: 3px;
+}
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+.slider:hover .nav-button {
+    opacity: 1;
+}
+.nav-prev {
+    left: 10px;
+}
+.nav-next {
+    right: 10px;
+}
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 6px;
+}
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.dot.active, .dot.bg-\[\#0066cc\] {
+    background-color: #0066cc !important;
+}
+.university-section {
+    text-align: center;
+    padding: 30px 0;
+    background: linear-gradient(to bottom, #f8f9fa, white);
+    margin-bottom: 30px;
+}
+.university-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.university-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.university-logo {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+.university-logo:hover {
+    transform: scale(1.05);
+}
+.country-flag {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.exchange-arrow {
+    color: #0066cc;
+    font-size: 2em;
+    margin: 0 20px;
+}
